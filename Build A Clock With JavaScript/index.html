@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+</head>
+<body> <div class="wrap">
+   <div class="clockbox">
+     <svg id="clock" xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 600 600">
+       <g id="face">
+         <circle class="circle" cx="300" cy="300" r="253.9" />
+         <path class="hour-marks" d="M300.5 94V61M506 300.5h32M300.5 506v33M94 300.5H60M411.3 107.8l7.9-13.8M493 190.2l13-7.4M492.1 411.4l16.5 9.5M411 492.3l8.9 15.3M189 492.3l-9.2 15.9M107.7 411L93 419.5M107.5 189.3l-17.1-9.9M188.1 108.2l-9-15.6" />
+         <circle class="mid-circle" cx="300" cy="300" r="16.2" />
+       </g>
+       <g id="hour">
+         <path class="hour-arm" d="M300.5 298V142" />
+         <circle class="sizing-box" cx="300" cy="300" r="253.9" />
+       </g>
+       <g id="minute">
+         <path class="minute-arm" d="M300.5 298V67" />
+         <circle class="sizing-box" cx="300" cy="300" r="253.9" />
+       </g>
+       <g id="second">
+         <path class="second-arm" d="M300.5 350V55" />
+         <circle class="sizing-box" cx="300" cy="300" r="253.9" />
+       </g>
+     </svg>
+   </div>
+ </div>
+
+
+ 
+</body><script>const HOURHAND = document.querySelector("#hour");
+  const MINUTEHAND = document.querySelector("#minute");
+  const SECONDHAND = document.querySelector("#second");
+  
+  var date = new Date();
+  let hr = date.getHours();
+  let min = date.getMinutes();
+  let sec = date.getSeconds();
+  
+  let hrPosition = (hr * 360) / 12 + (min * (360 / 60)) / 12;
+  let minPosition = (min * 360) / 60 + (sec * (360 / 60)) / 60;
+  let secPosition = (sec * 360) / 60;
+  
+  function runTheClock() {
+    hrPosition = hrPosition + 3 / 360;
+    minPosition = minPosition + 6 / 60;
+    secPosition = secPosition + 6;
+  
+    HOURHAND.style.transform = "rotate(" + hrPosition + "deg)";
+    MINUTEHAND.style.transform = "rotate(" + minPosition + "deg)";
+    SECONDHAND.style.transform = "rotate(" + secPosition + "deg)";
+  }
+  
+  var interval = setInterval(runTheClock, 1000);
+  
+</script>
+</body>
+</html>

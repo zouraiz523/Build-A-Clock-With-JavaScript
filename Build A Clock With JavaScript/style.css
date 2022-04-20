@@ -1,0 +1,89 @@
+body {
+  background: linear-gradient(to right, hsl(200, 100%, 50%), hsl(175, 100%, 50%));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.wrap {
+  display: table;
+  display: flex;
+  justify-content: center;
+}
+
+.clockbox,
+#clock {
+  width: 100%;
+}
+
+.circle {
+  fill: none;
+  stroke: #000;
+  stroke-width: 9;
+  stroke-miterlimit: 10;
+}
+
+.mid-circle {
+  fill: #000;
+}
+.hour-marks {
+  fill: none;
+  stroke: #000;
+  stroke-width: 9;
+  stroke-miterlimit: 10;
+}
+
+.hour-arm {
+  fill: none;
+  stroke: #000;
+  stroke-width: 17;
+  stroke-miterlimit: 10;
+}
+
+.minute-arm {
+  fill: none;
+  stroke: #000;
+  stroke-width: 11;
+  stroke-miterlimit: 10;
+}
+
+.second-arm {
+  fill: none;
+  stroke: #000;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+}
+
+.sizing-box {
+  fill: none;
+}
+
+#hour,
+#minute,
+#second {
+  transform-origin: 300px 300px;
+  transition: transform 0.5s ease-in-out;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  text-transform: uppercase;
+  padding: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  color: white;
+  letter-spacing: 3px;
+}
+
+a {
+  color: #EC5389;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
